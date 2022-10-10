@@ -11,6 +11,23 @@ import {initdb, getDb, postDb, deleteDb, editDb} from './database.js';
 import {fetchCards} from './card.js';
 import {toggleForm, clearForm} from './form.js';
 
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installBtn.style.visibility = 'visible';
+  });
+
+installBtn.addEventListener('click', () => {
+  event.prompt();
+  installBtn.setAttribute('disabled', true);
+  installBtn.textContent = 'Installed!';
+  });
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+});
+
 window.addEventListener('load', function () {
   initdb();
   fetchCards();
