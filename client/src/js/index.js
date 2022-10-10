@@ -18,7 +18,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   installBtn.style.visibility = 'visible';
   });
 
-installBtn.addEventListener('click', () => {
+installBtn.addEventListener('click', (event) => {
   event.prompt();
   installBtn.setAttribute('disabled', true);
   installBtn.textContent = 'Installed!';
