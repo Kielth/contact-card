@@ -123,6 +123,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   });
 });
 
-window.addEventListener('appinstalled', (event) => {
+window.onappinstalled = () => (event) => {
   console.log('👍', 'appinstalled', event);
-});
+  installBtn.textContent = 'Installed';
+};
