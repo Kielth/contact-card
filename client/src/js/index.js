@@ -19,6 +19,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   });
 
 installBtn.addEventListener('click', (event) => {
+  console.log("Install Clicked **************************")
   event.prompt();
   installBtn.setAttribute('disabled', true);
   installBtn.textContent = 'Installed!';
